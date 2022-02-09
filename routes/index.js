@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const nodemailer = require("nodemailer");
+var cors = require('cors');
+
+const destination_mail = "uness.houdaifa@gmail.com";
+
+router.use(cors());
+
 
 /* TEST home page. */
 router.get('/', function(req, res, next) {
