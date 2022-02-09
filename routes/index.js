@@ -29,14 +29,14 @@ router.post("/sendmail", async (req, res, next) => {
     from: req.body.email,
     to: destination_mail,
     subject: req.body.subject,
-    text: req.body.message,
+    text: req.body.msg,
   });
 
   console.log("Message sent: %s", info.messageId);
 
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-  res.redirect(`${host}/contact`);
+  res.end();
 });
 
 module.exports = router;
