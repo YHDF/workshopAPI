@@ -28,8 +28,8 @@ router.post("/sendmail", async (req, res, next) => {
   let info = await transporter.sendMail({
     from: req.body.email,
     to: destination_mail,
-    subject: 'req.body.subject',
-    text: 'req.body.message',
+    subject: req.body.subject,
+    text: req.body.message,
   });
 
   console.log("Message sent: %s", info.messageId);
